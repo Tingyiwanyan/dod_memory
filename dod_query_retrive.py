@@ -51,8 +51,27 @@ def store_data(conversation: str, userid: int):
 	-------
 	stored graph database
 	"""
-	kg_embedding.convert_conversation(user_id, conversation)
-	
+	kg_embedding.convert_conversation(userid, conversation)
+
+
+text = 'The following plan outlines the \
+steps for researching the chemical composition of several\
+ paintings created in Denmark in the mid-1800s and is intended to ensure the preservation \
+ of these pieces. 1. Review the findings from the original research: review the study that \
+ discovered beer and cereal grains in the base layer of Danish paintings and is from the mid-1800s.\
+  Gather samples from the paintings: contact the relevant museums and obtain permission to gather \
+  samples from the paintings studied in the research. Run lab tests: send the gathered samples to a \
+  laboratory or hire a lab technician to analyze and identify the chemical composition of each painting.\
+   5. Review comparison results: compare the findings of the lab tests of all the paintings studied to \
+   systematically class the use of beer, cereal grains, and yeast in the base layer. Outreach to museums and \
+   galleries: contact museums, galleries, and other places that house these pieces to provide them with the \
+   information required to properly preserve these pieces. Executing these steps will allow us to understand \
+   the chemical composition of these paintings, which is essential for their preservation. Additionally, \
+   by presenting our findings in a scientific report, we can ensure that other museums, galleries, and art\
+    historians can continue the research.'
+
+
+store_data(text, 1920)
 
 
 

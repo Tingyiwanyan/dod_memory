@@ -45,7 +45,8 @@ class KG_embedding(KG_construct):
 	"""
 	Construct embedding vector database
 	"""
-	def __init__(self, spark):
+	def __init__(self):
+		spark = SparkSession.builder.enableHiveSupport().getOrCreate()
 		KG_construct.__init__(self, spark)
 
 	def retrieve_corpus(self, table_name:str, user_id=None)-> list:

@@ -72,6 +72,7 @@ steps for researching the chemical composition of several\
 
 
 store_data(text, 1920)
+search_embeddings("what is lab test", 'graph_database.triple_relation')
 
 
 

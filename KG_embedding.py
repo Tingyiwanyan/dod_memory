@@ -64,7 +64,7 @@ class KG_embedding(KG_construct):
 		-------
 		corpus: retrived corpus list
 		"""
-		dataframe = self.extract_table()
+		dataframe = self.extract_table().toPandas()
 
 		sources = dataframe['source']
 		relation = dataframe['relation']

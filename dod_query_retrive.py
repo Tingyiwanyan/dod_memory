@@ -26,16 +26,16 @@ def query_embeddings(query: str, corpus: list):
 	corpus_embeddings = embedder.encode(corpus, convert_to_tensor=True)
 	query_embedding = embedder.encode(query, convert_to_tensor=True)
 
-    # We use cosine-similarity and torch.topk to find the highest 5 scores
-    cos_scores = util.cos_sim(query_embedding, corpus_embeddings)[0]
-    top_results = torch.topk(cos_scores, k=top_k)
+	# We use cosine-similarity and torch.topk to find the highest 5 scores
+	cos_scores = util.cos_sim(query_embedding, corpus_embeddings)[0]
+	top_results = torch.topk(cos_scores, k=top_k)
 
-    print("\n\n======================\n\n")
-    print("Query:", query)
-    print("\nTop " TOP_K " most similar sentences in corpus:")
+	print("\n\n======================\n\n")
+	print("Query:", query)
+	print("\nTop " TOP_K " most similar sentences in corpus:")
 
-    for score, idx in zip(top_results[0], top_results[1]):
-        print(corpus[idx], "(Score: {:.4f})".format(score))
+	for score, idx in zip(top_results[0], top_results[1]):
+		print(corpus[idx], "(Score: {:.4f})".format(score))
 
 
 

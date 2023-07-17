@@ -2,12 +2,15 @@ from KG_extractor import KG_extractor
 from PyPDF2 import PdfReader
 import urllib
 import re
+from pyspark import SparkContext, SparkConf
+from pyspark.sql import SparkSession
 
 
 class KG_construct(KG_extractor):
 	def __init__(self,spark):
 		KG_extractor.__init__(self)
 		self.spark = spark
+		self.spark = SparkSession.builder.enableHiveSupport().getOrCreate()
 		self.spark.sql("CREATE DATABASE IF NOT EXISTS graph_database")
 
 	def extract_table(self):

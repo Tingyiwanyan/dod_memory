@@ -3,6 +3,8 @@ from KG_construct import KG_construct
 from pyspark.sql import functions as F
 from sentence_transformers import SentenceTransformer, CrossEncoder, util
 import torch
+from pyspark import SparkContext, SparkConf
+from pyspark.sql import SparkSession
 
 MODEL_NAME = 'nq-distilbert-base-v1'
 BI_ENCODER = SentenceTransformer(MODEL_NAME)

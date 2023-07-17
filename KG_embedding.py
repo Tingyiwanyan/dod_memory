@@ -72,7 +72,7 @@ class KG_embedding(KG_construct):
 		sentences = []
 		for i in range(len(sources)):
 			text = sources[i] + ' ' + relation[i] + ' '+ target[i]
-			sentences = sentences.append(text)
+			sentences.append(text)
 
 		return sentences
 

@@ -71,7 +71,7 @@ steps for researching the chemical composition of several\
     historians can continue the research.'
 
 
-store_data(text, 1920)
+#store_data(text, 1920)
 search_embeddings("what is lab test", 'graph_database.triple_relation')
 
 

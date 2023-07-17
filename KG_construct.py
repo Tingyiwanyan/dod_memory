@@ -2,8 +2,6 @@ from KG_extractor import KG_extractor
 from PyPDF2 import PdfReader
 import urllib
 import re
-from pyspark import SparkContext, SparkConf
-from pyspark.sql import SparkSession
 
 
 class KG_construct(KG_extractor):

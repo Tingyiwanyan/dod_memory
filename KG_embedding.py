@@ -7,7 +7,7 @@ from pyspark import SparkContext, SparkConf
 from pyspark.sql import SparkSession
 
 MODEL_NAME = 'all-MiniLM-L6-v2'
-BI_ENCODER = SentenceTransformer(MODEL_NAME)
+BI_ENCODER = SentenceTransformer('all-MiniLM-L6-v2')
 TOP_K = 3
 
 

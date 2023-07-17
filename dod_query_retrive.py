@@ -32,7 +32,7 @@ def query_embeddings(query: str, corpus: list):
 
 	print("\n\n======================\n\n")
 	print("Query:", query)
-	print("Top " TOP_K " most similar sentences in corpus:")
+	print("Top ", TOP_K,  " most similar sentences in corpus:")
 
 	for score, idx in zip(top_results[0], top_results[1]):
 		print(corpus[idx], "(Score: {:.4f})".format(score))

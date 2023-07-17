@@ -1,4 +1,4 @@
-from platform_core.DataBases.KGraph.KG_extractor import KG_extractor
+from KG_extractor import KG_extractor
 from PyPDF2 import PdfReader
 import urllib
 import re

@@ -88,7 +88,7 @@ class KG_embedding(KG_construct):
 		-------
 		embedding_vector: list of embedded sentence vectors
 		"""
-		corpus_embedding = BI_ENCODER(corpus, convert_to_tensor=True)
+		corpus_embedding = BI_ENCODER(sentences, convert_to_tensor=True)
 
 		return corpus_embedding
 

@@ -7,7 +7,7 @@ import torch
 MODEL_NAME = 'nq-distilbert-base-v1'
 BI_ENCODER = SentenceTransformer(MODEL_NAME)
 TOP_K = 3
-kg_embedding = KG_embedding()
+
 
 
 def search_embeddings(querys:str, table_name:str, user_id=None)-> list:
@@ -38,22 +38,6 @@ def search_embeddings(querys:str, table_name:str, user_id=None)-> list:
 
 	for score, idx in zip(top_results[0], top_results[1]):
 		print(candidate_sentences[idx],"(Score: {:.4f})".format(score))
-
-
-def store_data(conversation: str, userid: int):
-	"""
-	storage data into spark database
-
-	Parameters:
-	-----------
-	conversation: str, the input string
-	userid: int
-
-	Returns:
-	-------
-	stored graph database
-	"""
-	kg_embedding.convert_conversation(user_id, conversation)
 
 
 

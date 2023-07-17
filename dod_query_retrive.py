@@ -7,6 +7,7 @@ import torch
 #kg_construct = KG_construct()
 embedder = SentenceTransformer('all-MiniLM-L6-v2')
 TOP_K = 3
+kg_embedding = KG_embedding()
 
 
 def query_embeddings(query: str, corpus: list):
@@ -36,6 +37,22 @@ def query_embeddings(query: str, corpus: list):
 
 	for score, idx in zip(top_results[0], top_results[1]):
 		print(corpus[idx], "(Score: {:.4f})".format(score))
+
+def store_data(conversation: str, userid: int):
+	"""
+	storage data into spark database
+
+	Parameters:
+	-----------
+	conversation: str, the input string
+	userid: int
+
+	Returns:
+	-------
+	stored graph database
+	"""
+	kg_embedding.convert_conversation(user_id, conversation)
+	
 
 
 

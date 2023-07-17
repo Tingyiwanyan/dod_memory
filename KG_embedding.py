@@ -6,7 +6,7 @@ import torch
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SparkSession
 
-MODEL_NAME = 'nq-distilbert-base-v1'
+MODEL_NAME = 'all-MiniLM-L6-v2'
 BI_ENCODER = SentenceTransformer(MODEL_NAME)
 TOP_K = 3
 

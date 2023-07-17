@@ -1,6 +1,9 @@
 #from KG_embedding import *
 #from pyspark import SparkContext, SparkConf
 #from pyspark.sql import SparkSession
+from KG_construct import KG_construct
+from KG_embedding import *
+from KG_extractor import KG_extractor
 from sentence_transformers import SentenceTransformer, util
 import torch
 
@@ -19,8 +22,12 @@ corpus = ['A man is eating food.',
           ]
 corpus_embeddings = embedder.encode(corpus, convert_to_tensor=True)
 
+kg_embedding = KG_embedding()
+corpus = kg_embedding.retrieve_corpus('graph_database.triple_relation')
+
 # Query sentences:
-queries = ['who is playing drums','A man is eating pasta.', 'Someone in a gorilla costume is playing a set of drums.', 'A cheetah chases prey on across a field.']
+#queries = ['who is playing drums','A man is eating pasta.', 'Someone in a gorilla costume is playing a set of drums.', 'A cheetah chases prey on across a field.']
+queries = ["what is lab test"]
 
 
 # Find the closest 5 sentences of the corpus for each query sentence based on cosine similarity

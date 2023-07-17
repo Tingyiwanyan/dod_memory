@@ -1,5 +1,5 @@
 #from platform_core.DataBases.KGraph.KG_extractor import KG_extractor
-KG_construct import KG_construct
+from KG_construct import KG_construct
 from pyspark.sql import functions as F
 from sentence_transformers import SentenceTransformer, CrossEncoder, util
 import torch
